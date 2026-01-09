@@ -181,6 +181,113 @@ type MotionTokens struct {
 }
 ```
 
+## Integration with Other Packages
+
+### With Dataviz
+
+```go
+import (
+    "github.com/SCKelemen/dataviz"
+    design "github.com/SCKelemen/design-system"
+)
+
+// Use design tokens in visualizations
+tokens := design.MidnightTheme()
+config := dataviz.RenderConfig{
+    DesignTokens: tokens,
+    Color:        tokens.Accent,
+    Theme:        tokens.Theme,
+}
+
+renderer := dataviz.NewSVGRenderer()
+output := renderer.RenderLineGraph(data, bounds, config)
+```
+
+### With SVG
+
+```go
+import (
+    "github.com/SCKelemen/svg"
+    design "github.com/SCKelemen/design-system"
+)
+
+// Use design tokens for SVG styling
+tokens := design.DefaultTheme()
+rect := svg.Rect(10, 10, 100, 50, svg.Style{
+    Fill:   tokens.Accent,
+    Stroke: tokens.Color,
+    StrokeWidth: 2,
+})
+```
+
+### Theme Switching
+
+```go
+// Start with one theme
+tokens := design.DefaultTheme()
+
+// Switch to dark mode
+tokens = tokens.DarkMode()
+
+// Switch themes dynamically
+if userPreference == "midnight" {
+    tokens = design.MidnightTheme()
+} else if userPreference == "nord" {
+    tokens = design.NordTheme()
+}
+```
+
+## Complete Example
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/SCKelemen/dataviz"
+    design "github.com/SCKelemen/design-system"
+    "time"
+)
+
+func main() {
+    // Resolve theme from user preferences
+    params := map[string]string{
+        "theme": "midnight",
+        "mode":  "dark",
+    }
+    tokens := design.ResolveDesignTokens(params)
+
+    // Create visualization with theme
+    data := dataviz.LineGraphData{
+        Points: []dataviz.TimeSeriesData{
+            {Date: time.Now(), Value: 100},
+            {Date: time.Now().AddDate(0, 0, 1), Value: 125},
+        },
+        Color:     tokens.Accent,
+        Smooth:    true,
+        Tension:   0.3,
+        MarkerType: "circle",
+    }
+
+    bounds := dataviz.Bounds{Width: 400, Height: 200}
+    config := dataviz.RenderConfig{
+        DesignTokens: tokens,
+        Color:        tokens.Accent,
+        Theme:        tokens.Theme,
+    }
+
+    renderer := dataviz.NewSVGRenderer()
+    output := renderer.RenderLineGraph(data, bounds, config)
+    fmt.Println(output.String())
+}
+```
+
 ## Dependencies
 
 - [github.com/SCKelemen/color](https://github.com/SCKelemen/color) - Color manipulation and parsing
+
+## Related Projects
+
+- [dataviz](https://github.com/SCKelemen/dataviz) - Data visualization with design token support
+- [svg](https://github.com/SCKelemen/svg) - SVG generation library
+- [cli](https://github.com/SCKelemen/cli) - Terminal rendering with theme support
