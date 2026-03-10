@@ -1,2 +1,6 @@
-github.com/SCKelemen/color v1.0.0 h1:g9XllQGiCY6lszXfR0GNT1kzJdXTxcxSLP+O9OCju+k=
-github.com/SCKelemen/color v1.0.0/go.mod h1:G6Yw9w05iV24jPUasYWh80LLssKu2IHu3n4rIHO1dgU=
+github.com/SCKelemen/color v1.0.3 h1:cYFQE4LYZ32R/Fjzf3gv+4Bi0shMTRkdpIpD7pD5D0E=
+github.com/SCKelemen/color v1.0.3/go.mod h1:Of/rXNH00Qe2j3crJFlrvezNqDcLMOrRb+lB+/S60Lo=
+github.com/SCKelemen/units v1.1.0 h1:Udw9ZEbozOzKH1BbaUu+/NmFG08tn5ypECZEkAl0mU8=
+github.com/SCKelemen/units v1.1.0/go.mod h1:kgbJAQ+0m29oq171mOI4STRfOaTYij9rl9J4xOq1H7s=
+golang.org/x/image v0.34.0 h1:33gCkyw9hmwbZJeZkct8XyR11yH889EQt/QH4VmXMn8=
+golang.org/x/image v0.34.0/go.mod h1:2RNFBZRB+vnwwFil8GkMdRvrJOFd1AzdZI6vOY+eJVU=
