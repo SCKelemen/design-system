@@ -20,6 +20,24 @@ type DesignTokens struct {
 	Density    string // "compact" or "comfortable"
 	Mode       string // "light" or "dark"
 
+	// Typography tokens (terminal relative sizing hints)
+	FontSizeXS       string
+	FontSizeS        string
+	FontSizeM        string
+	FontSizeL        string
+	FontSizeXL       string
+	FontWeightNormal string
+	FontWeightBold   string
+
+	// Selection tokens
+	SelectionBackground string // Color for selection highlight
+	SelectionForeground string // Text color when selected
+
+	// Toast tokens
+	ToastInfoColor    string
+	ToastSuccessColor string
+	ToastWarningColor string
+	ToastErrorColor   string
 	// Light/dark variant colors (if specified, override base colors based on mode)
 	ColorLight      string
 	ColorDark       string
@@ -48,6 +66,10 @@ type LayoutTokens struct {
 	SpaceXL  int // 24px
 	Space2XL int // 32px
 
+	// TUI-specific sizing defaults
+	ScrollbarWidth     int // Width for scrollbars
+	ToastMaxWidth      int // Maximum width for toast notifications
+	BreadcrumbMaxWidth int // Maximum width for breadcrumbs
 	// Card dimensions
 	CardPaddingLeft   int // Horizontal padding inside cards
 	CardPaddingRight  int
@@ -80,6 +102,10 @@ func DefaultLayoutTokens() *LayoutTokens {
 		SpaceXL:  24,
 		Space2XL: 32,
 
+		// TUI-specific sizing defaults
+		ScrollbarWidth:     1,
+		ToastMaxWidth:      50,
+		BreadcrumbMaxWidth: 80,
 		// Card dimensions (migrated from components.go constants)
 		CardPaddingLeft:   20,
 		CardPaddingRight:  20,
@@ -122,9 +148,24 @@ func ResolveDesignTokens(queryParams map[string]string) *DesignTokens {
 		Padding:    16,
 		Density:    "comfortable",
 		Mode:       "dark",
-		Layout:     DefaultLayoutTokens(),
-	}
 
+		FontSizeXS:       "xs",
+		FontSizeS:        "s",
+		FontSizeM:        "m",
+		FontSizeL:        "l",
+		FontSizeXL:       "xl",
+		FontWeightNormal: "normal",
+		FontWeightBold:   "bold",
+
+		SelectionBackground: "#1D4ED880",
+		SelectionForeground: "#E5E7EB",
+
+		ToastInfoColor:    "#1D4ED8",
+		ToastSuccessColor: "#10B981",
+		ToastWarningColor: "#F59E0B",
+		ToastErrorColor:   "#EF4444",
+		Layout:            DefaultLayoutTokens(),
+	}
 	// Check for Radix UI theme tokens first
 	if accentColor, ok := queryParams["accentColor"]; ok && accentColor != "" {
 		tokens.RadixAccentColor = accentColor

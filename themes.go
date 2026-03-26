@@ -12,7 +12,23 @@ func DefaultTheme() *DesignTokens {
 		Padding:    16,
 		Density:    "comfortable",
 		Mode:       "dark",
-		Layout:     DefaultLayoutTokens(),
+
+		FontSizeXS:       "xs",
+		FontSizeS:        "s",
+		FontSizeM:        "m",
+		FontSizeL:        "l",
+		FontSizeXL:       "xl",
+		FontWeightNormal: "normal",
+		FontWeightBold:   "bold",
+
+		SelectionBackground: "#1D4ED880",
+		SelectionForeground: "#E5E7EB",
+
+		ToastInfoColor:    "#1D4ED8",
+		ToastSuccessColor: "#10B981",
+		ToastWarningColor: "#F59E0B",
+		ToastErrorColor:   "#EF4444",
+		Layout:            DefaultLayoutTokens(),
 	}
 }
 
@@ -28,7 +44,23 @@ func MidnightTheme() *DesignTokens {
 		Padding:    16,
 		Density:    "comfortable",
 		Mode:       "dark",
-		Layout:     DefaultLayoutTokens(),
+
+		FontSizeXS:       "xs",
+		FontSizeS:        "s",
+		FontSizeM:        "m",
+		FontSizeL:        "l",
+		FontSizeXL:       "xl",
+		FontWeightNormal: "normal",
+		FontWeightBold:   "bold",
+
+		SelectionBackground: "#1D4ED880",
+		SelectionForeground: "#E5E7EB",
+
+		ToastInfoColor:    "#1D4ED8",
+		ToastSuccessColor: "#10B981",
+		ToastWarningColor: "#F59E0B",
+		ToastErrorColor:   "#EF4444",
+		Layout:            DefaultLayoutTokens(),
 	}
 }
 
@@ -44,7 +76,23 @@ func NordTheme() *DesignTokens {
 		Padding:    16,
 		Density:    "comfortable",
 		Mode:       "dark",
-		Layout:     DefaultLayoutTokens(),
+
+		FontSizeXS:       "xs",
+		FontSizeS:        "s",
+		FontSizeM:        "m",
+		FontSizeL:        "l",
+		FontSizeXL:       "xl",
+		FontWeightNormal: "normal",
+		FontWeightBold:   "bold",
+
+		SelectionBackground: "#5E81AC80",
+		SelectionForeground: "#ECEFF4",
+
+		ToastInfoColor:    "#5E81AC",
+		ToastSuccessColor: "#A3BE8C",
+		ToastWarningColor: "#EBCB8B",
+		ToastErrorColor:   "#BF616A",
+		Layout:            DefaultLayoutTokens(),
 	}
 }
 
@@ -60,7 +108,23 @@ func PaperTheme() *DesignTokens {
 		Padding:    16,
 		Density:    "comfortable",
 		Mode:       "light",
-		Layout:     DefaultLayoutTokens(),
+
+		FontSizeXS:       "xs",
+		FontSizeS:        "s",
+		FontSizeM:        "m",
+		FontSizeL:        "l",
+		FontSizeXL:       "xl",
+		FontWeightNormal: "normal",
+		FontWeightBold:   "bold",
+
+		SelectionBackground: "#3B82F640",
+		SelectionForeground: "#1F2937",
+
+		ToastInfoColor:    "#3B82F6",
+		ToastSuccessColor: "#10B981",
+		ToastWarningColor: "#F59E0B",
+		ToastErrorColor:   "#EF4444",
+		Layout:            DefaultLayoutTokens(),
 	}
 }
 
@@ -76,7 +140,23 @@ func WrappedTheme() *DesignTokens {
 		Padding:    16,
 		Density:    "comfortable",
 		Mode:       "dark",
-		Layout:     DefaultLayoutTokens(),
+
+		FontSizeXS:       "xs",
+		FontSizeS:        "s",
+		FontSizeM:        "m",
+		FontSizeL:        "l",
+		FontSizeXL:       "xl",
+		FontWeightNormal: "normal",
+		FontWeightBold:   "bold",
+
+		SelectionBackground: "#7B58C980",
+		SelectionForeground: "#EC4899",
+
+		ToastInfoColor:    "#7B58C9",
+		ToastSuccessColor: "#10B981",
+		ToastWarningColor: "#F59E0B",
+		ToastErrorColor:   "#EF4444",
+		Layout:            DefaultLayoutTokens(),
 	}
 }
 
