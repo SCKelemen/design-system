@@ -38,6 +38,31 @@ type DesignTokens struct {
 	ToastSuccessColor string
 	ToastWarningColor string
 	ToastErrorColor   string
+
+	// Semantic status colors
+	StatusSuccess string
+	StatusError   string
+	StatusRunning string
+	StatusPending string
+	StatusMuted   string
+
+	// Surface hierarchy
+	SurfaceBase    string
+	SurfaceRaised  string
+	SurfaceOverlay string
+	BorderSubtle   string
+
+	// Diff colors
+	DiffAddBackground    string
+	DiffRemoveBackground string
+
+	// Syntax colors
+	SyntaxKeyword  string
+	SyntaxFunction string
+	SyntaxString   string
+	SyntaxNumber   string
+	SyntaxComment  string
+
 	// Light/dark variant colors (if specified, override base colors based on mode)
 	ColorLight      string
 	ColorDark       string
@@ -164,7 +189,27 @@ func ResolveDesignTokens(queryParams map[string]string) *DesignTokens {
 		ToastSuccessColor: "#10B981",
 		ToastWarningColor: "#F59E0B",
 		ToastErrorColor:   "#EF4444",
-		Layout:            DefaultLayoutTokens(),
+
+		StatusSuccess: "#83CD7B",
+		StatusError:   "#C96B72",
+		StatusRunning: "#06B6D4",
+		StatusPending: "#EAB308",
+		StatusMuted:   "#7A818A",
+
+		SurfaceBase:    "#282C34",
+		SurfaceRaised:  "#31353D",
+		SurfaceOverlay: "#353A43",
+		BorderSubtle:   "#3C414B",
+
+		DiffAddBackground:    "#314D3B",
+		DiffRemoveBackground: "#5F3439",
+
+		SyntaxKeyword:  "#C678DD",
+		SyntaxFunction: "#61AFEF",
+		SyntaxString:   "#98C379",
+		SyntaxNumber:   "#D19A66",
+		SyntaxComment:  "#7F848E",
+		Layout:         DefaultLayoutTokens(),
 	}
 	// Check for Radix UI theme tokens first
 	if accentColor, ok := queryParams["accentColor"]; ok && accentColor != "" {
@@ -640,6 +685,30 @@ func applyTheme(tokens *DesignTokens, theme string) {
 				"color":      "#EC4899",
 				"background": "#020617",
 				"accent":     "#7B58C9",
+			},
+		},
+		"slate": {
+			"light": {
+				"color":      "#1E293B",
+				"background": "#F8FAFC",
+				"accent":     "#6794CD",
+			},
+			"dark": {
+				"color":      "#E6E8EB",
+				"background": "#282C34",
+				"accent":     "#6794CD",
+			},
+		},
+		"onedark": {
+			"light": {
+				"color":      "#383A42",
+				"background": "#FAFAFA",
+				"accent":     "#4078F2",
+			},
+			"dark": {
+				"color":      "#ABB2BF",
+				"background": "#282C34",
+				"accent":     "#61AFEF",
 			},
 		},
 		"default": {
