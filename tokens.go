@@ -39,13 +39,21 @@ type DesignTokens struct {
 	ToastWarningColor string
 	ToastErrorColor   string
 
-	// Semantic status colors
+	// Semantic status colors (two-tier: bright for confirmation, muted for metadata)
+	SuccessBright string // Primary success: dots, checks, 'Done'
+	SuccessMuted  string // Secondary success: durations, supporting detail
+	ErrorBright   string // Primary error: dots, crosses, 'Failed'
+	ErrorMuted    string // Secondary error: durations, supporting detail
+	RunningColor  string // Active/running state
+	PendingColor  string // Warning/pending state
+	MutedColor    string // Neutral metadata
+
+	// Deprecated: use SuccessBright/SuccessMuted etc. Kept for backward compat.
 	StatusSuccess string
 	StatusError   string
 	StatusRunning string
 	StatusPending string
 	StatusMuted   string
-
 	// Surface hierarchy
 	SurfaceBase    string
 	SurfaceRaised  string
@@ -190,12 +198,19 @@ func ResolveDesignTokens(queryParams map[string]string) *DesignTokens {
 		ToastWarningColor: "#F59E0B",
 		ToastErrorColor:   "#EF4444",
 
-		StatusSuccess: "#83CD7B",
+		SuccessBright: "#88D67F",
+		SuccessMuted:  "#5B845C",
+		ErrorBright:   "#C96B72",
+		ErrorMuted:    "#7A4044",
+		RunningColor:  "#06B6D4",
+		PendingColor:  "#EAB308",
+		MutedColor:    "#7A818A",
+
+		StatusSuccess: "#88D67F",
 		StatusError:   "#C96B72",
 		StatusRunning: "#06B6D4",
 		StatusPending: "#EAB308",
 		StatusMuted:   "#7A818A",
-
 		SurfaceBase:    "#282C34",
 		SurfaceRaised:  "#31353D",
 		SurfaceOverlay: "#353A43",
